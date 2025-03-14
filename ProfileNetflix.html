@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile - Netflix</title>
+    <title>Edit Profile - Netflix </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #141414;
+            background-color: black;
             color: white;
-            font-family: Arial, sans-serif;
         }
-        .container {
+        .profile-container {
             max-width: 500px;
-            margin-top: 50px;
+            margin: auto;
+            text-align: left;
         }
-        .profile-icon {
-            width: 80px;
-            height: 80px;
-            background-color: #00d45f;
+        .profile-image {
+            width: 100px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
             border-radius: 5px;
             position: relative;
         }
@@ -31,59 +29,93 @@
             bottom: 5px;
             right: 5px;
             background: black;
-            padding: 5px;
             border-radius: 50%;
+            padding: 5px;
+        }
+        .form-control {
+            background-color: #333;
+            color: white;
+            border: none;
+        }
+        .section-divider {
+            border-bottom: 1px solid gray;
+            margin: 20px 0;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .btn-custom {
+            background-color: black;
+            color: white;
+            border: 1px solid gray;
+            padding: 8px 20px;
+            margin-right: 10px;
+        }
+        .btn-save {
             background-color: white;
             color: black;
-            font-weight: bold;
-            border: none;
+            border: 1px solid white;
+        }
+        .btn-maturity {
+            display: block;
+            width: fit-content;
+            margin-top: 10px;
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <nav class="navbar p-3">
+        <div class="container">
+            <img height="40" src="assets/netflix_logo.png" alt="Netflix Logo" href="ProfileNetflix.html">
+        </div>
+    </nav>
+
+    <div class="container mt-5 profile-container">
         <h2>Edit Profile</h2>
-        <div class="d-flex align-items-center mb-3">
-            <div class="profile-icon">
-                <span>🔄</span>
-                <span class="edit-icon">✏️</span>
+        <hr>
+        <div class="d-flex align-items-center mt-3">
+            <div class="profile-image">
+                <img height="100" src="assets/avatar.png" alt="Profile Icon">
+                <span class="edit-icon opacity-50"  href="#">✏️</span>
             </div>
-            <input type="text" class="form-control ms-3" value="Strive Student">
+            <input type="text" class="form-control ms-3 border border-1 rounded-0 border-secondary-subtle" value="Strive Student" readonly>
         </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Language:</label>
-            <select class="form-select">
-                <option>English</option>
+        <div class="mt-3">
+            <label for="language" class="form-label text-center">Language:</label>
+            <select class="form-select form-control border border-1 rounded-0 border-secondary-subtle bg-black text-wh" id="language">
+                <option selected>English</option>
+                <option>Italian</option>
+                <option>Spanish</option>
+                <option>French</option>
             </select>
-        </div>
-        
-        <div class="mb-3">
+            <hr>
+            <div class="section-divider"></div>
             <label class="form-label">Maturity Settings:</label>
-            <button class="btn btn-dark w-100">ALL MATURITY RATINGS</button>
-            <p class="text-muted small">Show titles of <strong>all maturity ratings</strong> for this profile.</p>
-            <button class="btn btn-secondary w-100" disabled>EDIT</button>
-        </div>
-        
-        <div class="mb-3">
+            <button class="btn btn-secondary btn-maturity border border-1 rounded-0 m-1">ALL MATURITY RATINGS</button>
+            <p class="text-white mt-2">Show titles of <strong>all maturity ratings</strong> for this profile.</p>
+            <button class="btn btn-outline-light border border-1 rounded-0">EDIT</button>
+            <div class="section-divider"></div>
             <label class="form-label">Autoplay controls</label>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" checked>
-                <label class="form-check-label">Autoplay next episode in a series on all devices.</label>
+            <div class="checkbox-container">
+                <input type="checkbox" checked>
+                <span>Autoplay next episode in a series on all devices.</span>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" checked>
-                <label class="form-check-label">Autoplay previews while browsing on all devices.</label>
+            <div class="checkbox-container mt-2">
+                <input type="checkbox" checked>
+                <span>Autoplay previews while browsing on all devices.</span>
+            </div>
+            <div class="section-divider"></div>
+            <div class="d-flex">
+                <button class="btn btn-save border border-1 rounded-0 m-1">SAVE</button>
+                <button class="btn btn-custom border border-1 rounded-0 m-1">CANCEL</button>
+                <button class="btn btn-custom border border-1 rounded-0 m-1">DELETE PROFILE</button>
             </div>
         </div>
-        
-        <div class="d-flex">
-            <button class="btn btn-custom flex-fill me-2">SAVE</button>
-            <button class="btn btn-secondary flex-fill me-2">CANCEL</button>
-            <button class="btn btn-dark flex-fill">DELETE PROFILE</button>
-        </div>
-    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
